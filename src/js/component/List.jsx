@@ -3,8 +3,7 @@ import React, { useState } from "react";
 function List() {
     const [newTodo, setNewTodo] = useState("");
     const [todos, setTodos] = useState([]);
-    const [isShown, setIsShown] = useState(false);
-
+  
     return (
         <>
             <ul>
