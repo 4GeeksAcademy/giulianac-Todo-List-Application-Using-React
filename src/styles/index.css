@@ -10,3 +10,68 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+ul {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+ul:hover {
+    cursor: pointer;
+    .btn-close {
+        visibility: visible;
+    }
+}
+ul li{
+    padding: 0.5rem;
+    padding-left: 2rem;
+    list-style: none;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.45);
+    font-size: 1.2rem
+}
+input {
+    border: none;
+    width: 100%;
+}
+.footer{
+    padding: 0.5rem;
+}
+.card {
+    margin-top: 3rem;
+    border: 1px solid rgba(211, 211, 211, 0.50);
+    border-radius: 0;
+    box-shadow:
+    /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+    0 10px 0 -5px #eee,
+    /* The second layer shadow */
+    0 10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+    0 20px 0 -10px #eee,
+    /* The third layer shadow */
+    0 20px 1px -9px rgba(0,0,0,0.15),
+    rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.header {
+    font-family:cursive;
+    color: lightskyblue;
+    font-size: 5rem;
+}
+
+.no-tasks {
+    text-align: center;
+}
+
+.input-task {
+    padding: 0.5rem;
+}
+
+.btn-close {
+    float: right;
+    visibility: hidden;
+
+    &:active {
+        rotate: 25deg;
+    }
+}
