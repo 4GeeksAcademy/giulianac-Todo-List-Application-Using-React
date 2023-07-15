@@ -75,3 +75,9 @@ input {
         rotate: 25deg;
     }
 }
+
+.btn-danger {
+    width: 25%;
+    margin-left: 37%;
+    z-index: 2;
+}
