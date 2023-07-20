@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import home from "./home.jsx";
+import Home from "./Home.jsx";
 
 function List() {
     const [newTodo, setNewTodo] = useState("");
     const [todos, setTodos] = useState([]);
+    const apiURL = "https://fake-todo-list-52f9a4ed80ce.herokuapp.com/todos/user/giulianac";
 
     // GET API Tools - Loads the todos list on mount.
     useEffect(() => {
-        fetch("https://assets.breatheco.de/apis/fake/todos/user/giulianac", {
+        fetch(apiURL, {
             method: "GET",
             headers: { "Content-Type": "application/json" },
         })
@@ -27,7 +28,7 @@ function List() {
 
     //PUT API Tool - To add or delete a todo.
     const updateDatabase = () => {
-        fetch("https://assets.breatheco.de/apis/fake/todos/user/giulianac", {
+        fetch(apiURL, {
             method: "PUT",
             body: JSON.stringify(todos),
             headers: { "Content-Type": "application/json" },
@@ -51,7 +52,7 @@ function List() {
 
     return (
         <>
-            <ul className="todos-list">
+            <ul>
                 <li className="input-task">
                     <input type="text" placeholder="Add A New Task"
                         onChange={e => setNewTodo(e.target.value)}
@@ -73,7 +74,7 @@ function List() {
                     return (
                         <li key={index}>
                             {item.label}
-                            <i class="btn-close"
+                            <i className="btn-close"
                                 onClick={() => {
                                     setTodos(todos.filter((t, currentIndex) => index !== currentIndex));
                                     updateDatabase();
@@ -82,6 +83,10 @@ function List() {
                     )
                 })}
             </ul>
+            <button className="btn btn-danger mt-5"
+                onClick={clearList}>
+                Delete All
+            </button>
             <div className="footer text-muted">
                 <small>{todos.length} tasks</small>
             </div>
